@@ -14,6 +14,15 @@
             <property name="repository" ref="userRepository"/>
         </bean>
 
+        <bean name="blogRepository"
+              class="repository.blog.HibernateBlogRepository">
+        </bean>
+
+        <bean name="blogService"
+              class="service.blog.DefaultBlogService">
+            <property name="repository" ref="blogRepository"/>
+        </bean>
+
     <!--ApiCrud wiring-->
     <bean name="hibernateCrudOperation"
           class="data.crud.HibernateCrudOperation">

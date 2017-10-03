@@ -1,8 +1,12 @@
 package model.blog;
 
+import model.Crudable;
 import model.user.User;
 
-public class Blog {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Blog implements Crudable {
 
     private int id;
     private User creator;
@@ -23,6 +27,29 @@ public class Blog {
         this.summary = summary;
         this.summaryImage = summaryImage;
         this.content = content;
+    }
+
+    public boolean isIncomplete() {
+        return creator == null ||
+                approvedBy == null ||
+                title == null ||
+                summary == null ||
+                summaryImage == null ||
+                content == null;
+    }
+
+    public List<String> getIncompleteProperties() {
+        List<String> list = new ArrayList<String>();
+
+        if (creator == null) list.add("creator");
+        if (approvedBy == null) list.add("approvedBy");
+        if (title == null) list.add("title");
+        if (summary == null) list.add("summary");
+        if (summaryImage == null) list.add("summaryImage");
+        if (content == null) list.add("content");
+
+
+        return list;
     }
 
     //region Getters & Setters
@@ -82,6 +109,7 @@ public class Blog {
     public void setContent(byte[] content) {
         this.content = content;
     }
+
 
     //endregion
 
