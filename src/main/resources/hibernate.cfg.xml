@@ -16,6 +16,9 @@
         <!--Mappings-->
         <mapping class="model.user.User"/>
         <mapping class="model.internship.Internship"/>
+        <mapping class="model.location.Location"/>
+        <mapping class="model.school.School"/>
+        <mapping class="model.blog.Blog"/>
 
     </session-factory>
 </hibernate-configuration>
