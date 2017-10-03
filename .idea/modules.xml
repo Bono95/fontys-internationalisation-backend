@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rmts-gradle.iml" filepath="$PROJECT_DIR$/.idea/modules/rmts-gradle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rmts-gradle_main.iml" filepath="$PROJECT_DIR$/.idea/modules/rmts-gradle_main.iml" group="rmts-gradle" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rmts-gradle_test.iml" filepath="$PROJECT_DIR$/.idea/modules/rmts-gradle_test.iml" group="rmts-gradle" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/zien-gradle.iml" filepath="$PROJECT_DIR$/.idea/modules/zien-gradle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/zien-gradle_main.iml" filepath="$PROJECT_DIR$/.idea/modules/zien-gradle_main.iml" group="zien-gradle" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/zien-gradle_test.iml" filepath="$PROJECT_DIR$/.idea/modules/zien-gradle_test.iml" group="zien-gradle" />
     </modules>
   </component>
 </project>

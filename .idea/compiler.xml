@@ -4,6 +4,8 @@
     <bytecodeTargetLevel>
       <module name="rmts-gradle_main" target="1.5" />
       <module name="rmts-gradle_test" target="1.5" />
+      <module name="zien-gradle_main" target="1.5" />
+      <module name="zien-gradle_test" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
