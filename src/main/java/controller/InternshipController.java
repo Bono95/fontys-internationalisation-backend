@@ -35,7 +35,7 @@ public class InternshipController {
     }
 
     @RequestMapping(value = "", method = {RequestMethod.POST})
-    public ResponseEntity<String> register(@RequestBody Internship internship) {
+    public ResponseEntity<String> insert(@RequestBody Internship internship) {
         return crudService.insert(internship);
     }
 

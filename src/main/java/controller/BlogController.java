@@ -35,7 +35,7 @@ public class BlogController {
     }
 
     @RequestMapping(value = "", method = {RequestMethod.POST})
-    public ResponseEntity<String> register(@RequestBody Blog blog) {
+    public ResponseEntity<String> insert(@RequestBody Blog blog) {
         return crudService.insert(blog);
     }
 
