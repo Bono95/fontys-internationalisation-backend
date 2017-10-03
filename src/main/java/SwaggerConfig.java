@@ -10,9 +10,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import static com.google.common.base.Predicates.or;
 import static springfox.documentation.builders.PathSelectors.regex;
 
-/**
- * Created by fhict on 28/03/2017.
- */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
@@ -28,8 +25,8 @@ public class SwaggerConfig {
     }
 
     private ApiInfo apiInfo(){
-        return new ApiInfoBuilder().title("RMTS API")
-                .description("RMTS Reference APi")
+        return new ApiInfoBuilder().title("Zien API")
+                .description("ZIEN Reference APi")
                 .version("3.0")
                 .build();
     }

@@ -1,13 +1,17 @@
 package model.blog;
 
+import model.Crudable;
 import model.user.User;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Component
 @Entity
-public class Blog {
+public class Blog implements Crudable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,6 +35,29 @@ public class Blog {
         this.summary = summary;
         this.summaryImage = summaryImage;
         this.content = content;
+    }
+
+    public boolean isIncomplete() {
+        return creator == null ||
+                approvedBy == null ||
+                title == null ||
+                summary == null ||
+                summaryImage == null ||
+                content == null;
+    }
+
+    public List<String> getIncompleteProperties() {
+        List<String> list = new ArrayList<String>();
+
+        if (creator == null) list.add("creator");
+        if (approvedBy == null) list.add("approvedBy");
+        if (title == null) list.add("title");
+        if (summary == null) list.add("summary");
+        if (summaryImage == null) list.add("summaryImage");
+        if (content == null) list.add("content");
+
+
+        return list;
     }
 
     //region Getters & Setters
@@ -90,6 +117,7 @@ public class Blog {
     public void setContent(byte[] content) {
         this.content = content;
     }
+
 
     //endregion
 

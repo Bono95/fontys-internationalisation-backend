@@ -1,6 +1,7 @@
 package model.internship;
 
 
+import model.Crudable;
 import model.blog.Blog;
 import model.school.School;
 import model.user.User;
@@ -9,19 +10,25 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
-public class Internship {
+public class Internship implements Crudable {
 
     @Id
     private int id;
+
+    @OneToOne(targetEntity = Blog.class, fetch = FetchType.EAGER)
     private Blog blog;
+
+    @OneToOne(targetEntity = School.class, fetch = FetchType.EAGER)
     private School school;
 
     @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
     private User user;
-    private int semester;
+    private int semester = 0;
     private Date startDate;
     private Date endDate;
 
@@ -35,6 +42,29 @@ public class Internship {
         this.semester = semester;
         this.startDate = startDate;
         this.endDate = endDate;
+    }
+
+    public boolean isIncomplete() {
+        return blog == null ||
+                school == null ||
+                user == null ||
+                semester == 0 ||
+                startDate == null ||
+                endDate == null;
+    }
+
+    public List<String> getIncompleteProperties() {
+        List<String> list = new ArrayList<String>();
+
+        if (blog == null) list.add("blog");
+        if (school == null) list.add("school");
+        if (user == null) list.add("user");
+        if (semester == 0) list.add("semester");
+        if (startDate == null) list.add("startDate");
+        if (endDate == null) list.add("endDate");
+
+
+        return list;
     }
 
     //region Getters & Setters
