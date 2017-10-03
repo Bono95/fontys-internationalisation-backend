@@ -32,6 +32,24 @@
             <property name="repository" ref="internshipRepository"/>
         </bean>
 
+        <bean name="schoolRepository"
+                class="repository.school.HibernateSchoolRepository">
+        </bean>
+
+        <bean name="schoolService"
+              class="service.school.DefaultSchoolService">
+            <property name="repository" ref="schoolRepository"/>
+        </bean>
+
+        <bean name="locationRepository"
+              class="repository.location.HibernateLocationRepository">
+        </bean>
+
+        <bean name="locationService"
+              class="service.location.DefaultLocationService">
+            <property name="repository" ref="locationRepository"/>
+        </bean>
+
     <!--ApiCrud wiring-->
     <bean name="hibernateCrudOperation"
           class="data.crud.HibernateCrudOperation">

@@ -51,12 +51,14 @@ public class User implements Crudable {
         this.isModerator = isModerator;
     }
 
+
     public boolean isIncomplete() {
         return firstName == null ||
                 lastName == null ||
                 email == null ||
                 password == null;
     }
+
 
     public List<String> getIncompleteProperties() {
         List<String> list = new ArrayList<String>();
