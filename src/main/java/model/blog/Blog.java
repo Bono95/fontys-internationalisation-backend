@@ -1,14 +1,21 @@
 package model.blog;
 
-import model.Crudable;
 import model.user.User;
+import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Blog implements Crudable {
 
+@Component
+@Entity
+public class Blog {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
     private User creator;
     private User approvedBy;
     private String title;
