@@ -12,7 +12,7 @@ import service.location.LocationService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/location")
 @CrossOrigin("*")
 public class LocationController {
 
