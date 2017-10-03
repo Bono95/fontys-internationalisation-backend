@@ -28,7 +28,7 @@ public class InternshipController {
         return service.getAll();
     }
 
-    @RequestMapping("/{id}")
+    @RequestMapping(value = "/{id}", method = {RequestMethod.GET})
     public Internship find(@PathVariable("id") Integer id) {
         if (id == null) return null;
         return service.find(id);

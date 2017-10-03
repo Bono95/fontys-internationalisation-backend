@@ -22,7 +22,7 @@ public class SchoolController {
     @RequestMapping(value = "/all", method = {RequestMethod.GET})
     public List all() { return service.getAll(); }
 
-    @RequestMapping("/{id}")
+    @RequestMapping(value = "/{id}", method = {RequestMethod.GET})
     public School find(@PathVariable("id") Integer id) {
         if (id == null) return null;
         return service.find(id);

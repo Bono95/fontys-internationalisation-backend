@@ -23,7 +23,7 @@ public class LocationController {
     @RequestMapping(value = "/all", method = {RequestMethod.GET})
     public List all() { return service.getAll(); }
 
-    @RequestMapping("/{id}")
+    @RequestMapping(value = "/{id}", method = {RequestMethod.GET})
     public Location find(@PathVariable("id") Integer id) {
         if (id == null) return null;
         return service.find(id);
