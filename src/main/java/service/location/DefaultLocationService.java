@@ -5,7 +5,7 @@ import repository.location.LocationRepository;
 
 import java.util.List;
 
-public class DefaultLocationService {
+public class DefaultLocationService implements LocationService {
 
     private LocationRepository repository;
 

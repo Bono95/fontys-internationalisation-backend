@@ -11,7 +11,7 @@ import service.school.SchoolService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/school")
 @CrossOrigin("*")
 public class SchoolController {
 

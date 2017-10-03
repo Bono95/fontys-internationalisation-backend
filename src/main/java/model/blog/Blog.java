@@ -17,7 +17,9 @@ public class Blog implements Crudable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
     private User creator;
+    @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
     private User approvedBy;
     private String title;
     private String summary;
