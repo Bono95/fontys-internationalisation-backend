@@ -1,10 +1,18 @@
 package model.blog;
 
 import model.user.User;
+import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
+
+@Component
+@Entity
 public class Blog {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
     private User creator;
     private User approvedBy;
     private String title;
