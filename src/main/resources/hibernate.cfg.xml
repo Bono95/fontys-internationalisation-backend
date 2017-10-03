@@ -1,0 +1,21 @@
+<hibernate-configuration>
+    <session-factory>
+        <!--Sql settings-->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+        <!--Database settings-->
+        <property name="connection.url">jdbc:mysql://217.62.67.126:3306/zien?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC</property>
+        <property name="connection.username">Zien</property>
+        <property name="connection.password">Habibke</property>
+
+        <!--Hibernate settings-->
+        <property name="hbm2ddl.auto">create-drop</property>
+        <property name="show_sql">true</property>
+
+        <!--Mappings-->
+        <mapping class="model.user.User"/>
+        <mapping class="model.internship.Internship"/>
+
+    </session-factory>
+</hibernate-configuration>

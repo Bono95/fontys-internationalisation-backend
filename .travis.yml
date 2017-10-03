@@ -1,0 +1,8 @@
+language: java
+jdk:
+  - oraclejdk8
+before-install:
+  - chomd +x gradlew
+script:
+  - gradle check
+  - gradle build
