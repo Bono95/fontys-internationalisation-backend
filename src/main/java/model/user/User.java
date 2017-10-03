@@ -51,7 +51,7 @@ public class User implements Crudable {
         this.isModerator = isModerator;
     }
 
-    @Override
+
     public boolean isIncomplete() {
         return firstName == null ||
                 lastName == null ||
@@ -59,7 +59,7 @@ public class User implements Crudable {
                 password == null;
     }
 
-    @Override
+
     public List<String> getIncompleteProperties() {
         List<String> list = new ArrayList<String>();
 

@@ -1,22 +1,22 @@
 package controller;
 
 import data.crud.CrudService;
-import model.blog.Blog;
+import model.internship.Internship;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.blog.BlogService;
+import service.internship.InternshipService;
+
 import java.util.List;
 
-
 @RestController
-@RequestMapping("/blog")
+@RequestMapping("/internship")
 @CrossOrigin("*")
-public class BlogController {
+public class InternshipController {
 
     private ApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
-    private BlogService service = appContext.getBean("blogService", BlogService.class);
+    private InternshipService service = appContext.getBean("internshipService", InternshipService.class);
     private CrudService crudService = appContext.getBean("crudService", CrudService.class);
 
 //    @Autowired
@@ -29,18 +29,18 @@ public class BlogController {
     }
 
     @RequestMapping("/{id}")
-    public Blog find(@PathVariable("id") Integer id) {
+    public Internship find(@PathVariable("id") Integer id) {
         if (id == null) return null;
         return service.find(id);
     }
 
     @RequestMapping(value = "", method = {RequestMethod.POST})
-    public ResponseEntity<String> register(@RequestBody Blog blog) {
-        return crudService.insert(blog);
+    public ResponseEntity<String> register(@RequestBody Internship internship) {
+        return crudService.insert(internship);
     }
 
     @RequestMapping(value = "", method ={RequestMethod.PUT})
-    public ResponseEntity<String> update(@RequestBody Blog blog) {
-        return crudService.update(blog);
+    public ResponseEntity<String> update(@RequestBody Internship internship) {
+        return crudService.update(internship);
     }
 }

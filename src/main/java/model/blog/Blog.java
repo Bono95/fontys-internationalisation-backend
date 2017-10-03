@@ -1,5 +1,6 @@
 package model.blog;
 
+import model.Crudable;
 import model.user.User;
 import org.springframework.stereotype.Component;
 
@@ -10,7 +11,7 @@ import java.util.List;
 
 @Component
 @Entity
-public class Blog {
+public class Blog implements Crudable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
