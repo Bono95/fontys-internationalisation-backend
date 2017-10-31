@@ -12,12 +12,12 @@ import java.util.List;
 public class HibernateUserRepository implements UserRepository {
 
 
-    public User login(String username, String password) {
+    public User login(String email, String password) {
 
         Session session = Database.SESSION.openSession();
 
-        User user = (User) session.createQuery("FROM User WHERE username = :username AND password = :password")
-                .setParameter("username",username)
+        User user = (User) session.createQuery("FROM User WHERE email = :email AND password = :password")
+                .setParameter("email",email)
                 .setParameter("password", password)
                 .uniqueResult();
 

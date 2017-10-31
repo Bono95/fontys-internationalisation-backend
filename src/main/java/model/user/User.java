@@ -23,6 +23,8 @@ public class User implements Crudable {
     private String lastName;
 
     private String infix;
+
+    @Column(unique = true)
     private String email;
     private String password;
     private boolean isModerator;

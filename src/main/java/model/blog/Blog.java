@@ -17,9 +17,9 @@ public class Blog implements Crudable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
+    @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
     private User creator;
-    @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
+    @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
     private User approvedBy;
     private String title;
     private String summary;
@@ -41,22 +41,22 @@ public class Blog implements Crudable {
 
     public boolean isIncomplete() {
         return creator == null ||
-                approvedBy == null ||
+//                approvedBy == null ||
                 title == null ||
-                summary == null ||
-                summaryImage == null ||
-                content == null;
+                summary == null;
+//                summaryImage == null ||
+//                content == null;
     }
 
     public List<String> getIncompleteProperties() {
         List<String> list = new ArrayList<String>();
 
         if (creator == null) list.add("creator");
-        if (approvedBy == null) list.add("approvedBy");
+//        if (approvedBy == null) list.add("approvedBy");
         if (title == null) list.add("title");
         if (summary == null) list.add("summary");
-        if (summaryImage == null) list.add("summaryImage");
-        if (content == null) list.add("content");
+//        if (summaryImage == null) list.add("summaryImage");
+//        if (content == null) list.add("content");
 
 
         return list;
