@@ -29,6 +29,9 @@ public class User implements Crudable {
     private String password;
     private boolean isModerator;
 
+    //TODO:  add Study
+    //TODO: add Picture
+
 
 
     public User() {

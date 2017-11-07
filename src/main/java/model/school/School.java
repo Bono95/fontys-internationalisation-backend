@@ -21,10 +21,12 @@ public class School implements Crudable {
     private String houseNumber;
     private String city;
     private String country;
+    //TODO: add ZipCode
+    //TODO: add Picture
     private String email;
     private String phoneNumber;
     private String url;
-    @OneToOne(targetEntity = Location.class, fetch = FetchType.EAGER)
+    @OneToOne(targetEntity = Location.class, fetch = FetchType.EAGER, cascade ={CascadeType.ALL})
     private Location location;
 
     public School() {

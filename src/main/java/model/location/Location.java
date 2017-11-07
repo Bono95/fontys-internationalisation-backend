@@ -20,6 +20,8 @@ public class Location implements Crudable {
     private String latitude;
     private String longtitude;
 
+    //TODO: add Picture
+
     public Location() {
 
     }
