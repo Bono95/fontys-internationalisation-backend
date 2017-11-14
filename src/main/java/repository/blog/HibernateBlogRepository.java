@@ -2,6 +2,7 @@ package repository.blog;
 
 import data.Database;
 import model.blog.Blog;
+import model.blog.BlogDate;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
@@ -29,5 +30,15 @@ public class HibernateBlogRepository implements BlogRepository {
         session.close();
 
         return blog;
+    }
+
+    public BlogDate getDate() {
+        Session session = Database.SESSION.openSession();
+
+        BlogDate date = session.find(BlogDate.class, 1);
+
+        session.close();
+
+        return date;
     }
 }

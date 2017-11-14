@@ -11,6 +11,8 @@ import java.util.List;
 @Component
 @Entity
 public class School implements Crudable {
+    //TODO: change school to institution.
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

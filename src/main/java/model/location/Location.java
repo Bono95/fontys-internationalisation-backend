@@ -17,8 +17,8 @@ public class Location implements Crudable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String latitude;
-    private String longtitude;
+    private int latitude;
+    private int longitude;
 
     //TODO: add Picture
 
@@ -26,42 +26,42 @@ public class Location implements Crudable {
 
     }
 
-    Location(String latitude, String longtitude) {
+    Location(int latitude, int longtitude) {
         this.latitude = latitude;
-        this.longtitude = longtitude;
+        this.longitude = longtitude;
     }
 
     public boolean isIncomplete() {
-        return latitude == null ||
-                longtitude == null;
+        return latitude == 0 ||
+                longitude == 0;
     }
 
 
     public List<String> getIncompleteProperties() {
         List<String> list = new ArrayList<String>();
 
-        if (longtitude == null) list.add("firstName");
-        if (latitude == null) list.add("lastName");
+        if (longitude == 0) list.add("firstName");
+        if (latitude == 0) list.add("lastName");
 
         return list;
     }
 
     //region Getters & Setters
 
-    public String getLatitude() {
+    public int getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(String latitude) {
+    public void setLatitude(int latitude) {
         this.latitude = latitude;
     }
 
-    public String getLongtitude() {
-        return longtitude;
+    public int getLongitude() {
+        return longitude;
     }
 
-    public void setLongtitude(String longtitude) {
-        this.longtitude = longtitude;
+    public void setLongitude(int longitude) {
+        this.longitude = longitude;
     }
 
     //endregion

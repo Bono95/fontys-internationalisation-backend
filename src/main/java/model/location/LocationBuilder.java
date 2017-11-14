@@ -2,16 +2,16 @@ package model.location;
 
 public class LocationBuilder {
 
-    private String latitude = "";
+    private int latitude = 0;
 
-    private String longtitude = "";
+    private int longtitude = 0;
 
-    public LocationBuilder latitude(String latitude) {
+    public LocationBuilder latitude(int latitude) {
         this.latitude = latitude;
         return this;
     }
 
-    public LocationBuilder longtitude(String longtitude) {
+    public LocationBuilder longtitude(int longtitude) {
         this.longtitude = longtitude;
         return this;
     }

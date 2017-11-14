@@ -2,11 +2,16 @@ package controller;
 
 import data.crud.CrudService;
 import model.blog.Blog;
+import model.blog.BlogDate;
+import org.joda.time.DateTime;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import service.blog.BlogService;
+
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.List;
 
 
@@ -28,6 +33,11 @@ public class BlogController {
         return service.getAll();
     }
 
+    @RequestMapping(value = "/date", method = {RequestMethod.GET})
+    public BlogDate date() {
+        return service.getDate();
+    }
+
     @RequestMapping(value = "/{id}", method = {RequestMethod.GET})
     public Blog find(@PathVariable("id") Integer id) {
         if (id == null) return null;
@@ -36,11 +46,15 @@ public class BlogController {
 
     @RequestMapping(value = "", method = {RequestMethod.POST})
     public ResponseEntity<String> insert(@RequestBody Blog blog) {
+        crudService.insert(new BlogDate(1, new Timestamp(System.currentTimeMillis())));
+        crudService.update(new BlogDate(1, new Timestamp(System.currentTimeMillis())));
         return crudService.insert(blog);
     }
 
     @RequestMapping(value = "", method ={RequestMethod.PUT})
     public ResponseEntity<String> update(@RequestBody Blog blog) {
+        crudService.insert(new BlogDate(1, new Timestamp(System.currentTimeMillis())));
+        crudService.update(new BlogDate(1, new Timestamp(System.currentTimeMillis())));
         return crudService.update(blog);
     }
 }

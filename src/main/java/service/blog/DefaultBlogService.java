@@ -1,6 +1,7 @@
 package service.blog;
 
 import model.blog.Blog;
+import model.blog.BlogDate;
 import repository.blog.BlogRepository;
 
 import java.util.List;
@@ -15,6 +16,10 @@ public class DefaultBlogService implements BlogService {
 
     public Blog find(int id) {
         return repository.find(id);
+    }
+
+    public BlogDate getDate() {
+        return repository.getDate();
     }
 
     //region Getters & Setters
