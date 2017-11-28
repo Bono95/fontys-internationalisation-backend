@@ -2,11 +2,11 @@ package model.blog;
 
 import model.Crudable;
 import model.user.User;
-import org.hibernate.action.internal.OrphanRemovalAction;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -24,20 +24,29 @@ public class Blog implements Crudable {
     private User approvedBy;
     private String title;
     private String summary;
+    private boolean accepted = false;
+    private boolean rejected = false;
+    private Date date;
+    private String content;
     private byte[] summaryImage;
-    private byte[] content;
+    private byte[] contentImage;
 
     public Blog() {
 
     }
 
-    Blog(User creator, User approvedBy, String title, String summary, byte[] summaryImage, byte[] content) {
+
+    Blog(User creator, User approvedBy, String title, String summary, boolean accepted, boolean rejected, Date date, String content, byte[] summaryImage, byte[] contentImage) {
         this.creator = creator;
         this.approvedBy = approvedBy;
         this.title = title;
         this.summary = summary;
-        this.summaryImage = summaryImage;
+        this.accepted = accepted;
+        this.rejected = rejected;
+        this.date = date;
         this.content = content;
+        this.summaryImage = summaryImage;
+        this.contentImage = contentImage;
     }
 
     public boolean isIncomplete() {
@@ -46,7 +55,7 @@ public class Blog implements Crudable {
                 title == null ||
                 summary == null;
 //                summaryImage == null ||
-//                content == null;
+//                contentImage == null;
     }
 
     public List<String> getIncompleteProperties() {
@@ -57,13 +66,42 @@ public class Blog implements Crudable {
         if (title == null) list.add("title");
         if (summary == null) list.add("summary");
 //        if (summaryImage == null) list.add("summaryImage");
-//        if (content == null) list.add("content");
+//        if (contentImage == null) list.add("contentImage");
 
 
         return list;
     }
 
     //region Getters & Setters
+
+
+    public boolean isAccepted() {
+        return accepted;
+    }
+
+    public void setAccepted(boolean accepted) {
+        this.accepted = accepted;
+    }
+
+    public boolean isRejected() {
+        return rejected;
+    }
+
+    public void setRejected(boolean rejected) {
+        this.rejected = rejected;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
 
     public int getId() {
         return id;
@@ -114,13 +152,20 @@ public class Blog implements Crudable {
     }
 
     public byte[] getContent() {
-        return content;
+        return contentImage;
     }
 
     public void setContent(byte[] content) {
-        this.content = content;
+        this.contentImage = contentImage;
     }
 
+    public byte[] getContentImage() {
+        return contentImage;
+    }
+
+    public void setContentImage(byte[] contentImage) {
+        this.contentImage = contentImage;
+    }
 
     //endregion
 

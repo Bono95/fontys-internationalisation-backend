@@ -31,6 +31,7 @@ public class User implements Crudable {
 
     //TODO:  add Study
     //TODO: add Picture
+    //TODO: bool isActive
 
 
 

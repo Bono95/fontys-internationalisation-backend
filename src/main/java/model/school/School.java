@@ -25,6 +25,7 @@ public class School implements Crudable {
     private String country;
     //TODO: add ZipCode
     //TODO: add Picture
+    //TODO: bool isActive
     private String email;
     private String phoneNumber;
     private String url;

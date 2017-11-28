@@ -31,6 +31,7 @@ public class Internship implements Crudable {
     private int semester = 0;
     private Date startDate;
     private Date endDate;
+    //TODO: bool isActive
 
     public Internship() {
     }

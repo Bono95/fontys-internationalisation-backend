@@ -12,7 +12,7 @@ public class HibernateInternshipRepository implements InternshipRepository {
     public List getAll() {
         Session session = Database.SESSION.openSession();
 
-        Query query = session.createQuery("FROM Internschip ");
+        Query query = session.createQuery("FROM Internship ");
 
         List result = query.getResultList();
 
