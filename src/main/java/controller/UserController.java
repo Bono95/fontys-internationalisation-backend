@@ -50,4 +50,9 @@ public class UserController {
     public ResponseEntity<String> update(@RequestBody User user) {
         return crudService.update(user);
     }
+
+    @RequestMapping(value = "/{id}", method = {RequestMethod.DELETE})
+    public ResponseEntity<String> delete(@PathVariable("id") Integer id) {
+        return crudService.delete(service.find(id));
+    }
 }

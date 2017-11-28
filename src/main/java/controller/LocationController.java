@@ -34,4 +34,9 @@ public class LocationController {
 
     @RequestMapping(value = "", method = {RequestMethod.PUT})
     public ResponseEntity<String> update(@RequestBody Location location) { return crudService.update(location); }
+
+    @RequestMapping(value = "/{id}", method = {RequestMethod.DELETE})
+    public ResponseEntity<String> delete(@PathVariable("id") Integer id) {
+        return crudService.delete(service.find(id));
+    }
 }

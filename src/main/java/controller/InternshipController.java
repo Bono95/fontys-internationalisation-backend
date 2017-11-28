@@ -43,4 +43,9 @@ public class InternshipController {
     public ResponseEntity<String> update(@RequestBody Internship internship) {
         return crudService.update(internship);
     }
+
+    @RequestMapping(value = "/{id}", method = {RequestMethod.DELETE})
+    public ResponseEntity<String> delete(@PathVariable("id") Integer id) {
+        return crudService.delete(service.find(id));
+    }
 }

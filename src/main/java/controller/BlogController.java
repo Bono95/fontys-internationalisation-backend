@@ -57,4 +57,9 @@ public class BlogController {
         crudService.update(new BlogDate(1, new Timestamp(System.currentTimeMillis())));
         return crudService.update(blog);
     }
+
+    @RequestMapping(value = "/{id}", method = {RequestMethod.DELETE})
+    public ResponseEntity<String> delete(@PathVariable("id") Integer id) {
+        return crudService.delete(service.find(id));
+    }
 }

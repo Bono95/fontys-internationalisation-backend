@@ -34,4 +34,9 @@ public class SchoolController {
     @RequestMapping(value = "", method = {RequestMethod.PUT})
     public ResponseEntity<String> update(@RequestBody School school) { return crudService.update(school); }
 
+    @RequestMapping(value = "/{id}", method = {RequestMethod.DELETE})
+    public ResponseEntity<String> delete(@PathVariable("id") Integer id) {
+        return crudService.delete(service.find(id));
+    }
+
 }
