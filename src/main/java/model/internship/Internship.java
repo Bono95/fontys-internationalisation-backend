@@ -31,7 +31,7 @@ public class Internship implements Crudable {
     private int semester = 0;
     private Date startDate;
     private Date endDate;
-    //TODO: bool isActive
+    private boolean isActive = true;
 
     public Internship() {
     }
@@ -70,6 +70,14 @@ public class Internship implements Crudable {
 
     //region Getters & Setters
 
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
 
     public int getId() {
         return id;

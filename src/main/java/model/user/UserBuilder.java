@@ -17,6 +17,8 @@ public class UserBuilder {
 
     private String password = "";
 
+    private String study = "";
+
     private boolean isModerator = false;
 
 
@@ -45,13 +47,18 @@ public class UserBuilder {
         return this;
     }
 
+    public UserBuilder study(String study){
+        this.study = study;
+        return this;
+    }
+
     public UserBuilder isModerator(boolean isModerator){
         this.isModerator = isModerator;
         return this;
     }
 
     public User build(){
-        return new User(firstName,lastName,infix,email,password,isModerator);
+        return new User(firstName,lastName,infix,email,password,isModerator, study);
     }
 
 }

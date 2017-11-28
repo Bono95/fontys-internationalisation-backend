@@ -29,9 +29,10 @@ public class User implements Crudable {
     private String password;
     private boolean isModerator;
 
-    //TODO:  add Study
+    private String study;
     //TODO: add Picture
-    //TODO: bool isActive
+
+    private boolean isActive = true;
 
 
 
@@ -46,15 +47,17 @@ public class User implements Crudable {
         this.email = "aa";
         this.password = "aa";
         this.isModerator = true;
+        this.study = "temp";
     }
 
-    User(String firstName, String lastName, String infix, String email, String password, boolean isModerator) {
+    User(String firstName, String lastName, String infix, String email, String password, boolean isModerator, String study) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.infix = infix;
         this.email = email;
         this.password = password;
         this.isModerator = isModerator;
+        this.study = study;
     }
 
 
@@ -79,6 +82,23 @@ public class User implements Crudable {
     }
 
     //region Getters & Setters
+
+
+    public String getStudy() {
+        return study;
+    }
+
+    public void setStudy(String study) {
+        this.study = study;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
 
     public int getId() {
         return id;

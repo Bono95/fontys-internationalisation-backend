@@ -45,6 +45,7 @@ public class InternshipBuilder {
         return this;
     }
 
+
     public Internship build(){
         return new Internship(blog,school,user,semester,startDate,endDate);
     }
