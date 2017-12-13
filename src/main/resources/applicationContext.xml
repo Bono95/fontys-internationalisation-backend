@@ -23,6 +23,8 @@
             <property name="repository" ref="blogRepository"/>
         </bean>
 
+
+
         <bean name="internshipRepository"
               class="repository.internship.HibernateInternshipRepository">
         </bean>
@@ -32,13 +34,24 @@
             <property name="repository" ref="internshipRepository"/>
         </bean>
 
-        <bean name="schoolRepository"
-                class="repository.school.HibernateSchoolRepository">
+
+
+        <bean name="internshipRouteRepository"
+              class="repository.internshipRoute.HibernateInternshipRouteRepository">
         </bean>
 
-        <bean name="schoolService"
-              class="service.school.DefaultSchoolService">
-            <property name="repository" ref="schoolRepository"/>
+        <bean name="internshipRouteService"
+              class="service.internshipRoute.DefaultInternshipRouteService">
+            <property name="repository" ref="internshipRouteRepository"/>
+        </bean>
+
+        <bean name="institutionRepository"
+                class="repository.school.HibernateInstitutionRepository">
+        </bean>
+
+        <bean name="institutionService"
+              class="service.school.DefaultInstitutionService">
+            <property name="repository" ref="institutionRepository"/>
         </bean>
 
         <bean name="locationRepository"

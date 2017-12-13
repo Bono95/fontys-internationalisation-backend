@@ -3,7 +3,8 @@ package model.internship;
 
 import model.Crudable;
 import model.blog.Blog;
-import model.school.School;
+import model.internshipRoute.InternshipRoute;
+import model.school.Institution;
 import model.user.User;
 
 import javax.persistence.Entity;
@@ -23,8 +24,11 @@ public class Internship implements Crudable {
     @OneToOne(targetEntity = Blog.class, fetch = FetchType.EAGER)
     private Blog blog;
 
-    @OneToOne(targetEntity = School.class, fetch = FetchType.EAGER)
-    private School school;
+    @OneToOne(targetEntity = InternshipRoute.class, fetch = FetchType.EAGER)
+    private InternshipRoute internshipRoute;
+
+    @OneToOne(targetEntity = Institution.class, fetch = FetchType.EAGER)
+    private Institution institution;
 
     @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
     private User user;
@@ -36,9 +40,10 @@ public class Internship implements Crudable {
     public Internship() {
     }
     
-    Internship(Blog blog, School school, User user, int semester, Date startDate, Date endDate) {
+    Internship(Blog blog,InternshipRoute internshipRoute, Institution institution, User user, int semester, Date startDate, Date endDate) {
         this.blog = blog;
-        this.school = school;
+        this.internshipRoute = internshipRoute;
+        this.institution = institution;
         this.user = user;
         this.semester = semester;
         this.startDate = startDate;
@@ -46,8 +51,8 @@ public class Internship implements Crudable {
     }
 
     public boolean isIncomplete() {
-        return blog == null ||
-                school == null ||
+        return  internshipRoute == null ||
+                institution == null ||
                 user == null ||
                 semester == 0 ||
                 startDate == null ||
@@ -57,8 +62,8 @@ public class Internship implements Crudable {
     public List<String> getIncompleteProperties() {
         List<String> list = new ArrayList<String>();
 
-        if (blog == null) list.add("blog");
-        if (school == null) list.add("school");
+        if (internshipRoute == null) list.add("internshipRoute");
+        if (institution == null) list.add("institution");
         if (user == null) list.add("user");
         if (semester == 0) list.add("semester");
         if (startDate == null) list.add("startDate");
@@ -70,6 +75,14 @@ public class Internship implements Crudable {
 
     //region Getters & Setters
 
+
+    public InternshipRoute getInternshipRoute() {
+        return internshipRoute;
+    }
+
+    public void setInternshipRoute(InternshipRoute internshipRoute) {
+        this.internshipRoute = internshipRoute;
+    }
 
     public boolean isActive() {
         return isActive;
@@ -95,12 +108,12 @@ public class Internship implements Crudable {
         this.blog = blog;
     }
 
-    public School getSchool() {
-        return school;
+    public Institution getInstitution() {
+        return institution;
     }
 
-    public void setSchool(School school) {
-        this.school = school;
+    public void setInstitution(Institution institution) {
+        this.institution = institution;
     }
 
     public User getUser() {

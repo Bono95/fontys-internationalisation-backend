@@ -1,15 +1,17 @@
 package model.internship;
 
 import model.blog.Blog;
-import model.school.School;
+import model.internshipRoute.InternshipRoute;
+import model.school.Institution;
 import model.user.User;
 
 import java.util.Date;
 
 public class InternshipBuilder {
 
-    private Blog blog;
-    private School school;
+    private Blog blog = null;
+    private InternshipRoute internshipRoute;
+    private Institution institution;
     private User user;
     private int semester = 0;
     private Date startDate;
@@ -20,8 +22,13 @@ public class InternshipBuilder {
         return this;
     }
 
-    public InternshipBuilder school(School school){
-        this.school = school;
+    public InternshipBuilder internshipRoute(InternshipRoute internshipRoute){
+        this.internshipRoute = internshipRoute;
+        return this;
+    }
+
+    public InternshipBuilder institution(Institution institution){
+        this.institution = institution;
         return this;
     }
 
@@ -47,7 +54,7 @@ public class InternshipBuilder {
 
 
     public Internship build(){
-        return new Internship(blog,school,user,semester,startDate,endDate);
+        return new Internship(blog, internshipRoute, institution,user,semester,startDate,endDate);
     }
 
 

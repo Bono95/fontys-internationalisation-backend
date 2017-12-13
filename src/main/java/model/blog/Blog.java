@@ -2,6 +2,7 @@ package model.blog;
 
 import model.Crudable;
 import model.user.User;
+import org.hibernate.annotations.Type;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
@@ -27,6 +28,7 @@ public class Blog implements Crudable {
     private boolean accepted = false;
     private boolean rejected = false;
     private Date date;
+    @Type(type="text")
     private String content;
     private byte[] summaryImage;
     private byte[] contentImage;
@@ -103,6 +105,8 @@ public class Blog implements Crudable {
         this.content = content;
     }
 
+
+
     public int getId() {
         return id;
     }
@@ -151,8 +155,8 @@ public class Blog implements Crudable {
         this.summaryImage = summaryImage;
     }
 
-    public byte[] getContent() {
-        return contentImage;
+    public String getContent() {
+        return content;
     }
 
     public void setContent(byte[] content) {

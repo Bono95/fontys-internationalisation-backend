@@ -1,18 +1,18 @@
-package repository.blog;
+package repository.internshipRoute;
 
 import data.Database;
-import model.blog.Blog;
+import model.internshipRoute.InternshipRoute;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
 import java.util.List;
 
-public class HibernateBlogRepository implements BlogRepository {
+public class HibernateInternshipRouteRepository implements InternshipRouteRepository {
 
     public List getAll() {
         Session session = Database.SESSION.openSession();
 
-        Query query = session.createQuery("FROM Blog ");
+        Query query = session.createQuery("FROM InternshipRoute ");
 
         List result = query.getResultList();
 
@@ -21,13 +21,14 @@ public class HibernateBlogRepository implements BlogRepository {
         return result;
     }
 
-    public Blog find(int id) {
+    public InternshipRoute find(int id) {
         Session session = Database.SESSION.openSession();
 
-        Blog blog = session.find(Blog.class, id);
+        InternshipRoute internshipRoute = session.find(InternshipRoute.class, id);
 
         session.close();
 
-        return blog;
+        return internshipRoute;
     }
+
 }

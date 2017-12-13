@@ -1,19 +1,19 @@
 package repository.school;
 
 import data.Database;
-import model.school.School;
+import model.school.Institution;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import java.util.List;
 
-public class HibernateSchoolRepository implements SchoolRepository {
+public class HibernateInstitutionRepository implements InstitutionRepository {
 
 
     public List getAll() {
 
         Session session = Database.SESSION.openSession();
 
-        Query query = session.createQuery("FROM School");
+        Query query = session.createQuery("FROM Institution");
 
         List result = query.getResultList();
 
@@ -22,12 +22,12 @@ public class HibernateSchoolRepository implements SchoolRepository {
         return result;
     }
 
-    public School find(int id) {
+    public Institution find(int id) {
 
         Session session = Database.SESSION.openSession();
 
-        School school = session.find(School.class, id);
+        Institution institution = session.find(Institution.class, id);
 
-        return school;
+        return institution;
     }
 }

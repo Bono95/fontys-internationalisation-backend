@@ -17,10 +17,10 @@
         <!--Mappings-->
         <mapping class="model.user.User"/>
         <mapping class="model.internship.Internship"/>
+        <mapping class="model.internshipRoute.InternshipRoute"/>
         <mapping class="model.location.Location"/>
-        <mapping class="model.school.School"/>
+        <mapping class="model.school.Institution"/>
         <mapping class="model.blog.Blog"/>
-        <mapping class="model.blog.BlogDate"/>
 
     </session-factory>
 </hibernate-configuration>

@@ -10,7 +10,7 @@ import java.util.List;
 
 @Component
 @Entity
-public class School implements Crudable {
+public class Institution implements Crudable {
     //TODO: change school to institution.
 
 
@@ -32,10 +32,10 @@ public class School implements Crudable {
     @OneToOne(targetEntity = Location.class, fetch = FetchType.EAGER, cascade ={CascadeType.ALL})
     private Location location;
 
-    public School() {
+    public Institution() {
     }
 
-    School(String name, String street, String houseNumber, String city, String country, String email, String phoneNumber, String url, Location location) {
+    Institution(String name, String street, String houseNumber, String city, String country, String email, String phoneNumber, String url, Location location) {
         this.name = name;
         this.street = street;
         this.houseNumber = houseNumber;
