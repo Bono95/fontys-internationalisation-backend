@@ -32,6 +32,10 @@ public class Internship implements Crudable {
 
     @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
     private User user;
+
+    private String title;
+    private String summary;
+
     private int semester = 0;
     private Date startDate;
     private Date endDate;
@@ -40,11 +44,13 @@ public class Internship implements Crudable {
     public Internship() {
     }
     
-    Internship(Blog blog,InternshipRoute internshipRoute, Institution institution, User user, int semester, Date startDate, Date endDate) {
+    Internship(Blog blog,InternshipRoute internshipRoute, Institution institution, User user, String summary, String title, int semester, Date startDate, Date endDate) {
         this.blog = blog;
         this.internshipRoute = internshipRoute;
         this.institution = institution;
         this.user = user;
+        this.title = title;
+        this.summary = summary;
         this.semester = semester;
         this.startDate = startDate;
         this.endDate = endDate;

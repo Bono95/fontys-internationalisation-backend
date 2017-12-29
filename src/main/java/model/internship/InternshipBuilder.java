@@ -13,6 +13,8 @@ public class InternshipBuilder {
     private InternshipRoute internshipRoute;
     private Institution institution;
     private User user;
+    private String title;
+    private String summary;
     private int semester = 0;
     private Date startDate;
     private Date endDate;
@@ -37,6 +39,16 @@ public class InternshipBuilder {
         return this;
     }
 
+    public InternshipBuilder title(String Title){
+        this.title = title;
+        return this;
+    }
+
+    public InternshipBuilder summary(String summary){
+        this.summary = summary;
+        return this;
+    }
+
     public InternshipBuilder semester(int semester){
         this.semester = semester;
         return this;
@@ -54,7 +66,7 @@ public class InternshipBuilder {
 
 
     public Internship build(){
-        return new Internship(blog, internshipRoute, institution,user,semester,startDate,endDate);
+        return new Internship(blog, internshipRoute, institution,user, title, summary,semester,startDate,endDate);
     }
 
 
