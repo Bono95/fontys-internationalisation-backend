@@ -3,10 +3,7 @@ package model.internshipRoute;
 import model.Crudable;
 import model.school.Institution;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +11,7 @@ import java.util.List;
 public class InternshipRoute implements Crudable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String name;
@@ -21,12 +19,15 @@ public class InternshipRoute implements Crudable {
     @OneToOne(targetEntity = Institution.class, fetch = FetchType.EAGER)
     private Institution institution;
 
+    private boolean isActive = true;
+
     public InternshipRoute() {
     }
 
-    InternshipRoute(String name, Institution institution) {
+    InternshipRoute(String name, Institution institution, boolean isActive) {
         this.name = name;
         this.institution = institution;
+        this.isActive = isActive;
     }
 
 
@@ -44,6 +45,15 @@ public class InternshipRoute implements Crudable {
     }
 
     //region Getters & Setters
+
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
 
     public int getId() {
         return id;

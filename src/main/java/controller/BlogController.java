@@ -43,8 +43,8 @@ public class BlogController {
     }
 
     @RequestMapping(value = "", method ={RequestMethod.PUT})
-    public ResponseEntity<String> update(@RequestBody Blog blog) {
-        return crudService.update(blog);
+    public boolean update(@RequestBody Blog blog) {
+        return service.update(blog);
     }
 
     @RequestMapping(value = "/{id}", method = {RequestMethod.DELETE})

@@ -9,6 +9,7 @@ public class InstitutionBuilder {
     private String houseNumber = "";
     private String city = "";
     private String country = "";
+    private String zipCode = "";
     private String email = "";
     private String phoneNumber = "";
     private String url = "";
@@ -39,6 +40,11 @@ public class InstitutionBuilder {
         return this;
     }
 
+    public InstitutionBuilder zipCode(String zipCode){
+        this.zipCode = zipCode;
+        return this;
+    }
+
     public InstitutionBuilder email (String email){
         this.email = email;
         return this;
@@ -60,6 +66,6 @@ public class InstitutionBuilder {
     }
 
     public Institution build(){
-        return new Institution(name,street,houseNumber,city,country,email,phoneNumber,url,location);
+        return new Institution(name,street,houseNumber,city,country, zipCode, email,phoneNumber,url,location);
     }
 }

@@ -9,4 +9,6 @@ public interface BlogRepository {
     List getAll();
 
     Blog find(int id);
+
+    boolean update (Blog blog);
 }

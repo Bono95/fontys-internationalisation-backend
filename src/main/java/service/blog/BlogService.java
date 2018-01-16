@@ -8,5 +8,6 @@ import java.util.List;
 public interface BlogService {
     List getAll();
     Blog find(int id);
+    boolean update(Blog blog);
 }
 

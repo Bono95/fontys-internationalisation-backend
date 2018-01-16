@@ -17,6 +17,8 @@ public class DefaultBlogService implements BlogService {
         return repository.find(id);
     }
 
+    public boolean update(Blog blog){ return repository.update(blog);}
+
 
     //region Getters & Setters
     public void setRepository(BlogRepository repository) {

@@ -7,10 +7,7 @@ import model.internshipRoute.InternshipRoute;
 import model.school.Institution;
 import model.user.User;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -19,9 +16,10 @@ import java.util.List;
 public class Internship implements Crudable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @OneToOne(targetEntity = Blog.class, fetch = FetchType.EAGER)
+    @OneToOne(targetEntity = Blog.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Blog blog;
 
     @OneToOne(targetEntity = InternshipRoute.class, fetch = FetchType.EAGER)
@@ -81,6 +79,22 @@ public class Internship implements Crudable {
 
     //region Getters & Setters
 
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
+    }
 
     public InternshipRoute getInternshipRoute() {
         return internshipRoute;

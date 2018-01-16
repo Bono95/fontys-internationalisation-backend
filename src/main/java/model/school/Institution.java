@@ -23,6 +23,7 @@ public class Institution implements Crudable {
     private String houseNumber;
     private String city;
     private String country;
+    private String zipCode;
     //TODO: add ZipCode
     //TODO: add Picture
     private boolean isActive = true;
@@ -35,12 +36,13 @@ public class Institution implements Crudable {
     public Institution() {
     }
 
-    Institution(String name, String street, String houseNumber, String city, String country, String email, String phoneNumber, String url, Location location) {
+    Institution(String name, String street, String houseNumber, String city, String country, String zipCode, String email, String phoneNumber, String url, Location location) {
         this.name = name;
         this.street = street;
         this.houseNumber = houseNumber;
         this.city = city;
         this.country = country;
+        this.zipCode = zipCode;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.url = url;
@@ -78,6 +80,14 @@ public class Institution implements Crudable {
 
     //region Getters & Setters
 
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
 
     public boolean isActive() {
         return isActive;

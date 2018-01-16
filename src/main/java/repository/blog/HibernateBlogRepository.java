@@ -4,6 +4,7 @@ import data.Database;
 import model.blog.Blog;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
@@ -30,4 +31,19 @@ public class HibernateBlogRepository implements BlogRepository {
 
         return blog;
     }
+
+    public boolean update(Blog blog) {
+        Session session = Database.SESSION.openSession();
+
+        session.beginTransaction();
+
+        session.saveOrUpdate(blog);
+
+        session.getTransaction().commit();
+
+        session.close();
+
+        return true;
+    }
+
 }

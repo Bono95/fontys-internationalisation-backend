@@ -17,8 +17,8 @@ public class Location implements Crudable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private int latitude;
-    private int longitude;
+    private double latitude;
+    private double longitude;
 
     //TODO: add Picture
 
@@ -26,7 +26,7 @@ public class Location implements Crudable {
 
     }
 
-    Location(int latitude, int longtitude) {
+    Location(double latitude, double longtitude) {
         this.latitude = latitude;
         this.longitude = longtitude;
     }
@@ -48,19 +48,19 @@ public class Location implements Crudable {
 
     //region Getters & Setters
 
-    public int getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(int latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
-    public int getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(int longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 
