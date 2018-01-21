@@ -1,13 +1,11 @@
 package controller;
 
 import data.crud.CrudService;
-import model.internship.Internship;
 import model.internshipRoute.InternshipRoute;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.internship.InternshipService;
 import service.internshipRoute.InternshipRouteService;
 
 import java.util.List;
@@ -21,9 +19,6 @@ public class InternshipRouteController {
     private InternshipRouteService service = appContext.getBean("internshipRouteService", InternshipRouteService.class);
     private CrudService crudService = appContext.getBean("crudService", CrudService.class);
 
-//    @Autowired
-//    UserService userService;
-//    CrudService crudService;
 
     @RequestMapping(value = "/all", method = {RequestMethod.GET})
     public List all() {

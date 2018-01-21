@@ -20,7 +20,6 @@ public class Location implements Crudable {
     private double latitude;
     private double longitude;
 
-    //TODO: add Picture
 
     public Location() {
 
@@ -62,6 +61,14 @@ public class Location implements Crudable {
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     //endregion

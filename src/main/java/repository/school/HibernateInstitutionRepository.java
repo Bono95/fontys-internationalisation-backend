@@ -26,8 +26,6 @@ public class HibernateInstitutionRepository implements InstitutionRepository {
 
         Session session = Database.SESSION.openSession();
 
-        Institution institution = session.find(Institution.class, id);
-
-        return institution;
+        return session.find(Institution.class, id);
     }
 }

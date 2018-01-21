@@ -2,7 +2,6 @@ package controller;
 
 import data.crud.CrudService;
 import model.user.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.http.ResponseEntity;
@@ -21,9 +20,6 @@ public class UserController {
     private UserService service = appContext.getBean("userService", UserService.class);
     private CrudService crudService = appContext.getBean("crudService", CrudService.class);
 
-//    @Autowired
-//    UserService userService;
-//    CrudService crudService;
 
     @RequestMapping(value = "/all", method = {RequestMethod.GET})
     public List all() {

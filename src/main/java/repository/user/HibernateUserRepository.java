@@ -16,12 +16,10 @@ public class HibernateUserRepository implements UserRepository {
 
         Session session = Database.SESSION.openSession();
 
-        User user = (User) session.createQuery("FROM User WHERE email = :email AND password = :password")
+        return (User) session.createQuery("FROM User WHERE email = :email AND password = :password")
                 .setParameter("email",email)
                 .setParameter("password", password)
                 .uniqueResult();
-
-        return user;
     }
 
 

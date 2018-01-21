@@ -11,7 +11,6 @@ import java.util.List;
 @Component
 @Entity
 public class Institution implements Crudable {
-    //TODO: change school to institution.
 
 
     @Id
@@ -24,8 +23,6 @@ public class Institution implements Crudable {
     private String city;
     private String country;
     private String zipCode;
-    //TODO: add ZipCode
-    //TODO: add Picture
     private boolean isActive = true;
     private String email;
     private String phoneNumber;

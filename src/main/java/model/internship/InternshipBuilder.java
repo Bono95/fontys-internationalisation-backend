@@ -39,7 +39,7 @@ public class InternshipBuilder {
         return this;
     }
 
-    public InternshipBuilder title(String Title){
+    public InternshipBuilder title(String title){
         this.title = title;
         return this;
     }

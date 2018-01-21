@@ -1,9 +1,5 @@
 package model.user;
 
-import model.internship.Internship;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class UserBuilder {
 

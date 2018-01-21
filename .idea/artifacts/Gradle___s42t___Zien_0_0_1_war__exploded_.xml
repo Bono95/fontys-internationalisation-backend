@@ -29,6 +29,8 @@
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-joda:2.2.1" />
           <element id="library" level="project" name="Gradle: com.google.code.gson:gson:2.8.0" />
           <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-security:1.5.2.RELEASE" />
+          <element id="library" level="project" name="Gradle: javax.mail:mail:1.4.5" />
+          <element id="library" level="project" name="Gradle: javax.activation:activation:1.1" />
           <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter:1.5.2.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-web:1.5.2.RELEASE" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.8.7" />

@@ -19,9 +19,6 @@ public class InternshipController {
     private InternshipService service = appContext.getBean("internshipService", InternshipService.class);
     private CrudService crudService = appContext.getBean("crudService", CrudService.class);
 
-//    @Autowired
-//    UserService userService;
-//    CrudService crudService;
 
     @RequestMapping(value = "/all", method = {RequestMethod.GET})
     public List all() {

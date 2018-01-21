@@ -6,17 +6,9 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.service.ServiceRegistry;
 
 public class Database {
-//    private static SessionFactory sessionFactory;
-//    private static ServiceRegistry serviceRegistry;
-//
-//    public static SessionFactory createSessionFactory() {
-//        Configuration configuration = new Configuration();
-//        configuration.configure();
-//        ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(
-//                configuration.getProperties()). build();
-//        sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-//        return sessionFactory;
-//    }
+
+    private Database() {
+    }
 
     public static final SessionFactory SESSION = buildSessionFactory();
 

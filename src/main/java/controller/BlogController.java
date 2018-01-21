@@ -8,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import service.blog.BlogService;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 
@@ -21,9 +20,6 @@ public class BlogController {
     private BlogService service = appContext.getBean("blogService", BlogService.class);
     private CrudService crudService = appContext.getBean("crudService", CrudService.class);
 
-//    @Autowired
-//    UserService userService;
-//    CrudService crudService;
 
     @RequestMapping(value = "/all", method = {RequestMethod.GET})
     public List all() {

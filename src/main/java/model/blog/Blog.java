@@ -53,22 +53,17 @@ public class Blog implements Crudable {
 
     public boolean isIncomplete() {
         return creator == null ||
-//                approvedBy == null ||
                 title == null ||
                 summary == null;
-//                summaryImage == null ||
-//                contentImage == null;
+
     }
 
     public List<String> getIncompleteProperties() {
         List<String> list = new ArrayList<String>();
 
         if (creator == null) list.add("creator");
-//        if (approvedBy == null) list.add("approvedBy");
         if (title == null) list.add("title");
         if (summary == null) list.add("summary");
-//        if (summaryImage == null) list.add("summaryImage");
-//        if (contentImage == null) list.add("contentImage");
 
 
         return list;
@@ -157,10 +152,6 @@ public class Blog implements Crudable {
 
     public String getContent() {
         return content;
-    }
-
-    public void setContent(byte[] content) {
-        this.contentImage = contentImage;
     }
 
     public byte[] getContentImage() {

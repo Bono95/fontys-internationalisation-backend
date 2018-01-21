@@ -4,7 +4,6 @@ import data.Database;
 import model.blog.Blog;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
-import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 

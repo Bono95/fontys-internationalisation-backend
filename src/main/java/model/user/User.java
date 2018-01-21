@@ -2,7 +2,6 @@ package model.user;
 
 
 import model.Crudable;
-import model.internship.Internship;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
@@ -30,7 +29,6 @@ public class User implements Crudable {
     private boolean isModerator;
 
     private String study;
-    //TODO: add Picture
 
     private boolean isActive = true;
 

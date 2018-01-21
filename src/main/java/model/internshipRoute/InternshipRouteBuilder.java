@@ -1,6 +1,5 @@
 package model.internshipRoute;
 
-import model.internship.Internship;
 import model.school.Institution;
 
 public class InternshipRouteBuilder {
